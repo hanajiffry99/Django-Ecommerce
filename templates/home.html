@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main>
+
+    
+    
+    
+  
+
+    
+    <!--service-->
+
+
+    
+      
+    
+
+    
+    <div class="background-image" style="height : 5px ;"></div>
+    <div id="myContainer" class="container" style="width: 100%;max-width : 100% ; padding-left: 0px;padding-right: 0px;background-color : white !important;">
+
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5" style="background-color: #BFCCB5 !important;">
+
+        <!-- Navbar brand -->
+        <span class="navbar-brand">Categories:</span>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+          aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+          <!-- Links -->
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:category-filter' category='tshirt' %}">Shirts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:category-filter' category='sport_wears' %}">Sport wears</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:category-filter' category='outwears' %}">Outwears</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:category-filter' category='electronic devices' %}">Electronic devices</a>
+        </li>
+        </ul>
+          <!-- Links -->
+
+          <form class="form-inline">
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </div>
+          </form>
+        </div>
+        <!-- Collapsible content -->
+
+      </nav>
+      <!--/.Navbar-->
+
+          
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        {% for item in object_list %}
+        <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+        {% endfor %}
+      </ol>
+  
+      <!-- Slides -->
+      <div class="carousel-inner">
+        {% for item in object_list %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <img src="{{ item.image.url }}" class="d-block w-100 carousel-image"  alt="{{ item.title }}">
+          <div class="carousel-caption d-none d-md-block" >
+            <h5>{{ item.title }}</h5>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+  
+      <!-- Controls -->
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" >
+        <span class="carousel-control-prev-icon" aria-hidden="true" ></span>
+        <span class="sr-only" >Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- End Carousel -->
+
+      <!--Section: Products v.3-->
+
+      <section class="text-center mb-4 section-Products" >
+        <div class="card-row d-flex">
+        <div class="row wow fadeIn">
+
+          {% for item in object_list %}
+          <div class="col-lg-3 col-md-6 mb-4 d-flex">
+
+            <div class="card custom-card flex-fill">
+
+              <div class="view overlay" style="height: 75% !important;">
+                {% comment %} <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top" {% endcomment %}
+                <img src="{{ item.image.url }}" class="card-img-top">
+                <a href="{{ item.get_absolute_url }}">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <div class="card-body text-center" >
+                <a href="" class="grey-text">
+                  <h5>{{ item.get_category_display }}</h5>
+                </a>
+                <h5>
+                  <strong>
+                    <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title }}
+                      <span class="badge badge-pill {{ item.get_label_display }}-color">NEW</span>
+                    </a>
+                  </strong>
+                </h5>
+
+                <h4 class="font-weight-bold blue-text">
+                  <strong>$
+                  {% if item.discount_price %}
+                  {{ item.discount_price }}
+                  {% else %}
+                  {{ item.price }}
+                  {% endif %}
+                  </strong>
+                </h4>
+
+              </div>
+
+            </div>
+
+          </div>
+          
+          {% endfor %}
+        </div>
+        <!--service-->
+      </div>
+      <img src="https://static.ticimax.cloud/9750/Uploads/EditorUploads/NewFolder/checkout_icon.png" style="
+        height: 300px;  
+        margin-left: 200px;
+        margin-right: 200px;
+        border: 10px solid black; 
+        border-radius: 50px; 
+        box-shadow: 10px 10px 5px grey;" />
+
+        
+
+      {% endblock content %}

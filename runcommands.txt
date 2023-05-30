@@ -1,0 +1,25 @@
+// To get this project up and running you should start by having Python installed on the computer  , create a virtual environment to store the projects dependencies separately. then I can install virtualenv with
+
+* pip install virtualenv
+
+
+// 
+
+
+* virtualenv env
+
+// create new folder then activate it with this command 
+
+* source env/bin/activate 
+
+//Then install the project dependencies with
+
+* pip install -r requirements.txt
+
+//Now I can run the project with this command
+
+* python manage.py runserver
+
+
+
+//python manage.py collectstatic

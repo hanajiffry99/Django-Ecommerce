@@ -1,0 +1,159 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    /* A light gray for the body background */
+}
+
+.logo-text {
+    color: white;
+
+}
+
+.section-Products {
+    margin-top: 80px;
+}
+
+/* Carousel Styles */
+
+#myCarousel {
+    margin-top: 1em !important;
+}
+
+.carousel-item {
+    text-align: center !important;
+}
+
+.carousel-image {
+    height: 300px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding: 0.1px;
+    color: black;
+    text-align: center;
+
+    z-index: 1;
+    /* Decreased z-index value to prevent overlapping */
+}
+
+/* Navbar Styles */
+
+.navbar {
+    background-color: #333;
+    border-bottom: 1px solid #ccc;
+    color: #fff;
+    padding: 0;
+    height: 70px !important;
+}
+
+.navbar-brand {
+    color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffbb33;
+}
+
+.navbar-nav .nav-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.navbar-nav .dropdown-item {
+    color: #000
+}
+
+/* Product Grid Styles */
+
+.card-row {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card.custom-card {
+    background-color: #f9f9f9;
+    /* Same color as body background */
+    color: #333;
+    /* Dark color for text */
+
+    margin: 15px;
+    border: 1px solid #ddd;
+    /* Light border around the cards */
+    transition: all 0.3s ease-in-out;
+}
+
+.card.custom-card:hover {
+    transform: scale(1.03);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    /* Adjust the height as per your design */
+    object-fit: contain;
+}
+
+.card-body h5,
+.card-body h4 {
+    color: #4c9aff;
+    /* Bright blue for price and category */
+}
+
+/* Other Styles */
+
+.background-image {
+    background: #ddd;
+    height: 5px;
+}
+
+#myContainer {
+    background-color: #f9f9f9;
+    /* Same as body background */
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.mdb-color {
+    background-color: #ddd;
+}
+
+.md-form .form-control {
+    color: #333;
+}
+
+.badge-pill {
+    padding: 0.3em 0.6em;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 40px;
+    height: 40px;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Add custom styles for home page pictures */
+.home-pictures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3rem;
+}
