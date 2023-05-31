@@ -1,14 +1,12 @@
 {% load static %}
 {% load cart_template_tags %}
 
-
-
-<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar" >
+<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand waves-effect" href="/">
-        <strong class="blue-text logo-text">🇺🇦 UkrBazaar 🇺🇦 </strong>
+      <a class="navbar-brand mx-auto waves-effect" href="/">
+        <strong class="blue-text logo-text" style="font-size: 50px !important">🇺🇦 UkrBazaar 🇺🇦 </strong>
       </a>
 
       <!-- Collapse -->
@@ -23,15 +21,15 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <!-- Add your categories here -->
-          <li class="nav-item">
-            <a class="nav-link" href="#">Category 1</a>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-utensils"></i> Category 1</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Category 2</a>
+            <a class="nav-link" href="#"><i class="fas fa-tshirt"></i> Category 2</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Category 3</a>
-          </li>
+            <a class="nav-link" href="#"><i class="fas fa-shoe-prints"></i> Category 3</a>
+          </li> -->
           <!-- Add more categories as needed -->
         </ul>
 
@@ -47,18 +45,21 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_logout' %}">
+              <i class="fas fa-sign-out-alt"></i>
               <span class="clearfix d-none d-sm-inline-block"> Logout </span>
             </a>
           </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_login' %}">
-              <span class="clearfix d-none d-sm-inline-block"> Login </span>
+              <i class="fas fa-sign-in-alt" style="color: white;"></i>
+              <span class="clearfix d-none d-sm-inline-block" style="color: white;"> Login </span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_signup' %}">
-              <span class="clearfix d-none d-sm-inline-block"> Signup </span>
+              <i class="fas fa-user-plus" style="color: white;"></i>
+              <span class="clearfix d-none d-sm-inline-block" style="color: white;"> Sign Up </span>
             </a>
           </li>
           {% endif %}
@@ -67,3 +68,12 @@
 
     </div>
 </nav>
+
+<style>
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+</style>

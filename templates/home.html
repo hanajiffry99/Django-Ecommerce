@@ -24,7 +24,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5" style="background-color: #BFCCB5 !important;">
 
         <!-- Navbar brand -->
-        <span class="navbar-brand">Categories:</span>
+        <!-- <span class="navbar-brand">Categories:</span> -->
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -38,23 +38,23 @@
           <!-- Links -->
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'core:category-filter' category='tshirt' %}">Shirts</a>
+            <a class="nav-link" href="{% url 'core:category-filter' category='tshirt' %}"  style="color: white;">Shirts</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'core:category-filter' category='sport_wears' %}">Sport wears</a>
+            <a class="nav-link" href="{% url 'core:category-filter' category='sport_wears' %}"  style="color: white;">Sport wears</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'core:category-filter' category='outwears' %}">Outwears</a>
+            <a class="nav-link" href="{% url 'core:category-filter' category='outwears' %}"  style="color: white;">Outwears</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'core:category-filter' category='electronic devices' %}">Electronic devices</a>
+            <a class="nav-link" href="{% url 'core:category-filter' category='electronic devices' %}"  style="color: white;">Electronic devices</a>
         </li>
         </ul>
           <!-- Links -->
 
           <form class="form-inline">
-            <div class="md-form my-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <div class="md-form my-0" style="padding-left: 300%;">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" style="width: 250px;">
             </div>
           </form>
         </div>
